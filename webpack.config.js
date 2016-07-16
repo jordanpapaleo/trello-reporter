@@ -45,7 +45,7 @@ module.exports = {
       favicon: 'public/favicon.ico',
       template: 'index.tmpl.html',
       inject: 'body',
-      hash: true
+      hash: false
     }),
     new webpack.DefinePlugin({
       'process.env': {

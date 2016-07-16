@@ -20,9 +20,8 @@
     "start:dev": "webpack-dev-server --progress --inline --hot",
     "start:dist": "npm test && rm -rf dist && npm run build:dist && cp public/images/apple-icons/* dist",
     "test": "npm run test:lint --force",
-    "test:lintO": "standard *.js, ./app/*.js, ./app/**/*.js | standard-reporter --stylish",
     "test:lint": "eslint -c ./.eslintrc *.js, ./app/*.js, ./app/**/*.js --color",
-    "build:dist": "webpack --config webpack.config.js --progress --bail -p",
+    "build:dist": "rm -rf dist && mkdir dist && cp -R public/. dist/ && webpack --config webpack.config.js --progress --bail",
     "purge": "rm -rf node_modules/ && npm cache clean && npm install"
   },
   "license": "ISC",
@@ -37,7 +36,6 @@
   "dependencies": {
     "axios": "0.9.1",
     "babel-runtime": "6.5.0",
-    "bootstrap": "4.0.0-alpha.2",
     "gsap": "1.18.2",
     "lodash": "4.3.0",
     "react": "0.14.6",
