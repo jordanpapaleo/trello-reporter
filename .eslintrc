@@ -1,0 +1,24 @@
+{
+  "extends": ["standard"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "spaced-comment": 0,
+    "no-unused-vars": 0
+  },
+  "globals": {
+    "Trello": true,
+    "React": true
+  }
+}
