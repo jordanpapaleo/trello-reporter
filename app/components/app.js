@@ -5,6 +5,7 @@ import { createCard, updateCard } from 'actions/actionCard'
 import { getCards } from 'actions/actionCards'
 import { getBoards } from 'actions/actionBoards'
 import { getLists } from 'actions/actionLists'
+import scriptLoader from 'services/scriptLoader'
 
 export default class App extends Component {
   static get displayName () {
@@ -26,21 +27,25 @@ export default class App extends Component {
   }
 
   componentWillMount () {
-    Trello.authorize({
-      type: 'popup',
-      name: 'Getting Started Application',
-      scope: {
-        read: true,
-        write: true
-      },
-      expiration: 'never',
-      success () {
-        console.log('Successful authentication')
-      },
-      error () {
-        console.log('Failed authentication')
+    scriptLoader('https://api.trello.com/1/client.js?key=a0c06d56bf319a04e7d62708ff8903fa',
+      () => {
+        Trello.authorize({
+          type: 'popup',
+          name: 'Getting Started Application',
+          scope: {
+            read: true,
+            write: true
+          },
+          expiration: 'never',
+          success () {
+            console.log('Successful authentication')
+          },
+          error () {
+            console.log('Failed authentication')
+          }
+        })
       }
-    })
+    )
   }
 
   newCard () {
