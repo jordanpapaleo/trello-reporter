@@ -27,7 +27,7 @@ export default class App extends Component {
   }
 
   componentWillMount () {
-    scriptLoader('https://api.trello.com/1/client.js?key=a0c06d56bf319a04e7d62708ff8903fa',
+    scriptLoader('https://api.trello.com/1/client.js?key=9e881042da78c22bc645d1fa4bdce6d3',
       () => {
         Trello.authorize({
           type: 'popup',

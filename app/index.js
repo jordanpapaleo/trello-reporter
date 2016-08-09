@@ -1,6 +1,7 @@
 import 'libs/bootstrap-4.0-flex.css'
 import 'styles/main.scss'
-
+import jQuery from 'jquery'
+window.jQuery = jQuery
 import debug from 'debug'
 import React from 'react'
 import { render } from 'react-dom'
